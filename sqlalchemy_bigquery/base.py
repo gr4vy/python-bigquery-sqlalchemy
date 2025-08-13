@@ -1378,6 +1378,8 @@ class BigQueryDialect(DefaultDialect):
 
 
 class unnest(sqlalchemy.sql.functions.GenericFunction):
+    package = "bigquery"
+
     def __init__(self, *args, **kwargs):
         expr = kwargs.pop("expr", None)
         if expr is not None:
